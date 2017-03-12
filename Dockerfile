@@ -9,5 +9,5 @@ RUN echo /var/urbackup | dpkg -i /root/install.deb && rm /root/install.deb
 EXPOSE 55413/tcp 55414/tcp 55415/tcp 35623/tcp
 
 VOLUME [ "/var/urbackup", "/var/log", "/usr/share/urbackup" ]
-ENTRYPOINT ["/usr/sbin/urbackupsrv"]
+ENTRYPOINT ["/usr/bin/urbackupsrv"]
 CMD ["run"]
