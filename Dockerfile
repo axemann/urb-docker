@@ -6,7 +6,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y btrfs-to
 ADD https://www.urbackup.org/downloads/Server/${VERSION}/debian/stable/urbackup-server_${VERSION}_amd64.deb /root/install.deb
 RUN echo /backup | dpkg -i /root/install.deb && rm /root/install.deb
 
-EXPOSE 55413/tcp 55414/tcp 55415/tcp 35623/tcp
+EXPOSE 55413/tcp 55414/tcp 55415/tcp 35623/udp
 
 VOLUME [ "/backup", "/var/urbackup", "/var/log", "/usr/share/urbackup" ]
 ENTRYPOINT ["/usr/bin/urbackupsrv"]
