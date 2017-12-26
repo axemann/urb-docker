@@ -2,7 +2,7 @@ FROM debian:stable
 ENV VERSION 2.1.20
 MAINTAINER Ben Gibbons <axemann@gmail.com>
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y btrfs-tools apt-utils sqlite3 libcrypto++9 libcurl3 libfuse2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -y btrfs-tools apt-utils sqlite3 libcrypto++-dev libcurl3 libfuse2 && apt-get clean && rm -rf /var/lib/apt/lists/*
 ADD https://www.urbackup.org/downloads/Server/${VERSION}/debian/stable/urbackup-server_${VERSION}_amd64.deb /root/install.deb
 RUN echo /backup | dpkg -i /root/install.deb && rm /root/install.deb
 
